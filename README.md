@@ -1,6 +1,6 @@
-# cpanelinstall2021
-Install &amp; Configure cPanel
-todo:
+# Instalare cPanel
+Instalare &amp; Configurare cPanel
+De facut:
 litespeed check if needed
 imunifyav
 exim on another port
