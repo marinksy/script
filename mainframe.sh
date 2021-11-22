@@ -159,6 +159,6 @@ echo 'Loadul actual este' && w | awk '/load average/ { printf "%s %s %s\n", $10,
 sleep 10
 
 cd ~
-rm -rf cpanelinstall2021/
+rm -rf cpanelinstall/
 
 reboot
