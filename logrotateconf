@@ -1,0 +1,20 @@
+    /var/log/error_log {
+    missingok
+    notifempty
+    monthly
+    create 0644 root root
+  }
+  
+   /var/log/suphp_log {
+    missingok
+    notifempty
+    monthly
+    create 0600 root root
+  }
+  
+    /var/log/access_log {
+    missingok
+    notifempty
+    monthly
+    create 0644 root root
+  }
