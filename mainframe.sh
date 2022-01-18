@@ -162,6 +162,13 @@ sh imav-deploy.sh
 /usr/share/av-userside-plugin.sh
 ########Final instalare ImunifyAV + Activare modul in cPanel#############
 
+########Setare session save path si tmp dir in PHP-FPM#############
+echo "php_value_session_save_path: { name: 'php_value[session.save_path]', value: \"/var/cpanel/php/sessions/[% ea_php_version %]\" }" >> /var/cpanel/ApachePHPFPM/system_pool_defaults.yaml
+echo "php_value_upload_tmp_dir: { name: 'php_value[upload_tmp_dir]', value: \"[% homedir %]/tmp\" }" >> /var/cpanel/ApachePHPFPM/system_pool_defaults.yaml
+/scripts/php_fpm_config --rebuild
+/scripts/restartsrv_httpd
+########Final setare session save path si tmp dir in PHP-FPM#############
+
 echo 'Instalarea a fost efectuata cu success!!! Repornirea serverului este in progres.'
 ########Load avarage din w cu print pe char row 10/11/12#####
 echo 'Load-ul actual este' && w | awk '/load average/ { printf "%s %s %s\n", $10, $11, $12 }'
