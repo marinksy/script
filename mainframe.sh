@@ -156,9 +156,11 @@ sed -i '/allow_url_fopen = /c\allow_url_fopen = On' /opt/cpanel/ea-php*/root/etc
 sed -i '/allow_url_include = /c\allow_url_fopen = On' /opt/cpanel/ea-php*/root/etc/php.ini
 sed -i '/memory_limit/c\memory_limit = 2048M' /opt/cpanel/ea-php*/root/etc/php.ini
 
-########Instalare ImunifyAV#############
+########Instalare ImunifyAV + Activare modul in cPanel#############
 wget https://repo.imunify360.cloudlinux.com/defence360/imav-deploy.sh -O imav-deploy.sh
 sh imav-deploy.sh
+/usr/share/av-userside-plugin.sh
+########Final instalare ImunifyAV + Activare modul in cPanel#############
 
 echo 'Instalarea a fost efectuata cu success!!! Repornirea serverului este in progres.'
 ########Load avarage din w cu print pe char row 10/11/12#####
