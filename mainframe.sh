@@ -15,6 +15,10 @@
 #fi
 #############Final verificare RAM##############
 
+#############Actualizare MySQL GPG Keys##############
+rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
+#############Final actualizare MySQL GPG Keys##############
+
 systemctl mask firewalld
 systemctl stop firewalld
 yum -y install iptables-services
