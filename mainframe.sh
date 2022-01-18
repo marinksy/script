@@ -169,13 +169,8 @@ echo "php_value_upload_tmp_dir: { name: 'php_value[upload_tmp_dir]', value: \"[%
 /scripts/restartsrv_httpd
 ########Final setare session save path si tmp dir in PHP-FPM#############
 
-########Coduri culori output#############
-green='\033[0;92m'
-# Stergerea culorii dupa utilizare
-clear='\033[0m'
-########Final coduri culori output#############
 
-echo '${green}Instalarea a fost efectuata cu success!!! Repornirea serverului este in progres.${clear}'
+echo 'Instalarea a fost efectuata cu success!!! Repornirea serverului este in progres.'
 ########Load avarage din w cu print pe char row 10/11/12#####
 echo 'Load-ul actual este' && w | awk '/load average/ { printf "%s %s %s\n", $10, $11, $12 }'
 echo 'In cazul in care apar probleme dupa rularea scriptului, trimite mail la adrian.rus@mxh.ro'
