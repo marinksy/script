@@ -156,8 +156,8 @@ sed -i '/allow_url_fopen = /c\allow_url_fopen = On' /opt/cpanel/ea-php*/root/etc
 sed -i '/allow_url_include = /c\allow_url_fopen = On' /opt/cpanel/ea-php*/root/etc/php.ini
 sed -i '/memory_limit/c\memory_limit = 2048M' /opt/cpanel/ea-php*/root/etc/php.ini
 
-echo 'Instalarea a fost efectuata cu success!!! Repornirea serverului este in progres'
-########load avarage din w cu print pe char row 10/11/12#####
+echo 'Instalarea a fost efectuata cu success!!! Repornirea serverului este in progres.'
+########Load avarage din w cu print pe char row 10/11/12#####
 echo 'Load-ul actual este' && w | awk '/load average/ { printf "%s %s %s\n", $10, $11, $12 }'
 
 sleep 10
