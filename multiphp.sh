@@ -12,9 +12,9 @@ sed -i '/max_input_vars/c\max_input_vars = 10000' /opt/cpanel/ea-php74/root/etc/
 
 sed -i '/memory_limit/c\memory_limit = 2048M' /opt/cpanel/ea-php74/root/etc/php.ini
 
-sed -i '/upload_max_filesize/c\upload_max_filesize = 128M' /opt/cpanel/ea-php74/root/etc/php.ini
+sed -i '/upload_max_filesize/c\upload_max_filesize = 256M' /opt/cpanel/ea-php74/root/etc/php.ini
 
-sed -i '/post_max_size/c\post_max_size = 256M' /opt/cpanel/ea-php74/root/etc/php.ini
+sed -i '/post_max_size/c\post_max_size = 512M' /opt/cpanel/ea-php74/root/etc/php.ini
 
 sed -i '/date.timezone = /c\date.timezone = \"Europe\/Bucharest\"' /opt/cpanel/ea-php74/root/etc/php.ini
 
@@ -30,9 +30,9 @@ sed -i '/max_input_vars/c\max_input_vars = 10000' /opt/cpanel/ea-php73/root/etc/
 
 sed -i '/memory_limit/c\memory_limit = 2048M' /opt/cpanel/ea-php73/root/etc/php.ini
 
-sed -i '/upload_max_filesize/c\upload_max_filesize = 128M' /opt/cpanel/ea-php73/root/etc/php.ini
+sed -i '/upload_max_filesize/c\upload_max_filesize = 256M' /opt/cpanel/ea-php73/root/etc/php.ini
 
-sed -i '/post_max_size/c\post_max_size = 256M' /opt/cpanel/ea-php73/root/etc/php.ini
+sed -i '/post_max_size/c\post_max_size = 512M' /opt/cpanel/ea-php73/root/etc/php.ini
 
 sed -i '/date.timezone = /c\date.timezone = \"Europe\/Bucharest\"' /opt/cpanel/ea-php73/root/etc/php.ini
 
@@ -48,8 +48,8 @@ sed -i '/max_input_vars/c\max_input_vars = 10000' /opt/cpanel/ea-php80/root/etc/
 
 sed -i '/memory_limit/c\memory_limit = 2048M' /opt/cpanel/ea-php80/root/etc/php.ini
 
-sed -i '/upload_max_filesize/c\upload_max_filesize = 128M' /opt/cpanel/ea-php80/root/etc/php.ini
+sed -i '/upload_max_filesize/c\upload_max_filesize = 256M' /opt/cpanel/ea-php80/root/etc/php.ini
 
-sed -i '/post_max_size/c\post_max_size = 256M' /opt/cpanel/ea-php80/root/etc/php.ini
+sed -i '/post_max_size/c\post_max_size = 512M' /opt/cpanel/ea-php80/root/etc/php.ini
 
 sed -i '/date.timezone = /c\date.timezone = \"Europe\/Bucharest\"' /opt/cpanel/ea-php80/root/etc/php.ini
