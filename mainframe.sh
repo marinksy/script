@@ -46,12 +46,12 @@ sed -i '/#Port/c\Port 2112' /etc/ssh/sshd_config
 rm -f /var/cpanel/hulkd/enabled
 
 ######Setari eximconf##########
-cd ~/cpanelinstall/
+cd ~/mxhcp/
 chmod o+x eximconf.sh
 sh eximconfm.sh
 
 ######Setari eximconf##########
-cd ~/cpanelinstall/
+cd ~/mxhcp/
 chmod o+x tweakset.sh
 sh tweakset.sh
 
@@ -86,7 +86,7 @@ EOF
 timedatectl set-timezone "Europe/Bucharest"
 
 ######Setari awstats##########
-cd ~/cpanelinstall/
+cd ~/mxhcp/
 chmod o+x awstats.sh
 sh awstats.sh
 
@@ -102,18 +102,18 @@ echo '{"provider":null,"_schema_version":1}' >> /var/cpanel/autossl.json
 /usr/local/cpanel/bin/rebuild_phpconf --ea-php80=suphp
 
 ###Modifica optiuni multiphp#######
-cd ~/cpanelinstall/
+cd ~/mxhcp/
 chmod o+x multiphp.sh
 sh multiphp.sh
 
 ######SQLMODE#######
-cd ~/cpanelinstall/
+cd ~/mxhcp/
 service mysqld stop
-cat ~/cpanelinstall/sqlmode >> /etc/my.cnf
+cat ~/mxhcp/sqlmode >> /etc/my.cnf
 service mysqld start
 
 ########Instalare CSF, adaugare IP-uri si modificare conf##########
-cd ~/cpanelinstall/
+cd ~/mxhcp/
 chmod o+x csfinstalledit.sh
 sh csfinstalledit.sh
 
@@ -141,7 +141,7 @@ echo "#Ansible: Close abandoned systemd sessions
 wget --no-check-certificate ="Authorization: Bearer Mzc5NjM3MzYwMzI0OsA3q4cQJf66YWHdsGc7tTxA1SSW" https://bitbucket.mxserver.ro/projects/SM/repos/clean-session-files-cpanel-shared/raw/install_clean_session_files.sh -O /root/install_clean_session_files.sh && sh /root/install_clean_session_files.sh
 
 ########Setare logrotate pentru logurile care permit#############
-cat ~/cpanelinstall/logrotateconf >> /etc/logrotate.conf
+cat ~/mxhcp/logrotateconf >> /etc/logrotate.conf
 #####Editare crontaburi pentru sters loguri necuprinse in logrotate############
   
 crontab -l | { cat; echo "0 1 * * * find /home . -name 'error_log' -exec rm {} \; > /dev/null 2>&1"; } | crontab -
