@@ -189,6 +189,9 @@ whmapi1 reset_service_ssl_certificate service='ftp'
 whmapi1 reset_service_ssl_certificate service='exim'
 whmapi1 reset_service_ssl_certificate service='dovecot'
 whmapi1 reset_service_ssl_certificate service='cpanel'
+for service in ftp exim dovecot cpanel ; do whmapi1 --output=jsonpretty reset_service_ssl_certificate service=$service ;done
+mv /var/cpanel/hostname_cert_csrs{,.cpbkp} -v
+/usr/local/cpanel/bin/checkallsslcerts
 ########Final setare EXIM on another port + Refresh certificate SSL servicii########
 
 
