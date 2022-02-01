@@ -174,10 +174,10 @@ echo "php_value_upload_tmp_dir: { name: 'php_value[upload_tmp_dir]', value: \"[%
 
 ########Setare EXIM on another port + Refresh certificate SSL servicii########
 whmapi1 configureservice service=exim-altport enabled=1 monitored=1
-whmapi1 reset_service_ssl_certificate service='cpanel'
 whmapi1 reset_service_ssl_certificate service='ftp'
 whmapi1 reset_service_ssl_certificate service='exim'
 whmapi1 reset_service_ssl_certificate service='dovecot'
+whmapi1 reset_service_ssl_certificate service='cpanel'
 ########Final setare EXIM on another port + Refresh certificate SSL servicii########
 
 
