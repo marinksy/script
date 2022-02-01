@@ -172,6 +172,13 @@ echo "php_value_upload_tmp_dir: { name: 'php_value[upload_tmp_dir]', value: \"[%
 /scripts/restartsrv_httpd
 ########Final setare session save path si tmp dir in PHP-FPM#############
 
+########Fixare hostname server########
+hostname -f > /root/hostname
+whmapi1 sethostname hostname=$(cat /root/hostname)
+hostnamectl set-hostname $(cat /root/hostname)
+rm -f /root/hostname
+########Final fixare hostname server########
+
 ########Setare EXIM on another port + Refresh certificate SSL servicii########
 whmapi1 configureservice service=exim-altport enabled=1 monitored=1
 whmapi1 reset_service_ssl_certificate service='ftp'
