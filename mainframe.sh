@@ -189,12 +189,10 @@ whmapi1 reset_service_ssl_certificate service='ftp'
 whmapi1 reset_service_ssl_certificate service='exim'
 whmapi1 reset_service_ssl_certificate service='dovecot'
 whmapi1 reset_service_ssl_certificate service='cpanel'
-for service in ftp exim dovecot cpanel ; do whmapi1 --output=jsonpretty reset_service_ssl_certificate service=$service ;done
-mv /var/cpanel/hostname_cert_csrs{,.cpbkp} -v
-/usr/local/cpanel/bin/checkallsslcerts
 ########Final setare EXIM on another port + Refresh certificate SSL servicii########
 
-
+echo ""
+echo ""
 echo 'Instalarea a fost efectuata cu success!!! Repornirea serverului este in progres.'
 ########Load avarage din w cu print pe char row 10/11/12#####
 echo 'Load-ul actual este' && w | awk '/load average/ { printf "%s %s %s\n", $10, $11, $12 }'
