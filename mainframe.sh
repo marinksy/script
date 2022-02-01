@@ -172,6 +172,10 @@ echo "php_value_upload_tmp_dir: { name: 'php_value[upload_tmp_dir]', value: \"[%
 /scripts/restartsrv_httpd
 ########Final setare session save path si tmp dir in PHP-FPM#############
 
+########Acceptare EULA########
+whmapi1 accept_eula
+########Final acceptare EULA########
+
 ########Fixare hostname server########
 hostname -f > /root/hostname
 whmapi1 sethostname hostname=$(cat /root/hostname)
