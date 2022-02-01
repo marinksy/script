@@ -82,6 +82,9 @@ EOF
 #####Install pure-ftpd#########
 /usr/local/cpanel/scripts/setupftpserver pure-ftpd
 
+#####Setare BIND ca server DNS#####
+yes | /scripts/setupnameserver bind
+
 ######Setare timp si timezone##########
 timedatectl set-timezone "Europe/Bucharest"
 
