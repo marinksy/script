@@ -172,6 +172,14 @@ echo "php_value_upload_tmp_dir: { name: 'php_value[upload_tmp_dir]', value: \"[%
 /scripts/restartsrv_httpd
 ########Final setare session save path si tmp dir in PHP-FPM#############
 
+########Setare EXIM on another port + Refresh certificate SSL servicii########
+whmapi1 configureservice service=exim-altport enabled=1
+whmapi1 reset_service_ssl_certificate service='cpanel'
+whmapi1 reset_service_ssl_certificate service='ftp'
+whmapi1 reset_service_ssl_certificate service='exim'
+whmapi1 reset_service_ssl_certificate service='dovecot'
+########Final setare EXIM on another port + Refresh certificate SSL servicii########
+
 
 echo 'Instalarea a fost efectuata cu success!!! Repornirea serverului este in progres.'
 ########Load avarage din w cu print pe char row 10/11/12#####
