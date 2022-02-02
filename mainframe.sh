@@ -178,8 +178,7 @@ whmapi1 accept_eula
 
 ########Fixare hostname server########
 hostname -f > /root/hostname
-whmapi1 sethostname hostname=$(cat /root/hostname)
-hostnamectl set-hostname $(cat /root/hostname)
+/usr/local/cpanel/bin/set_hostname $(cat /root/hostname)
 rm -f /root/hostname
 ########Final fixare hostname server########
 
@@ -192,10 +191,12 @@ whmapi1 reset_service_ssl_certificate service='cpanel'
 ########Final setare EXIM on another port + Refresh certificate SSL servicii########
 
 echo ""
+echo "   __  ____  ____ __         __ "
+echo "  /  |/  / |/_/ // /__  ___ / /_"
+echo " / /|_/ />  </ _  / _ \(_-</ __/"
+echo "/_/  /_/_/|_/_//_/\___/___/\__/ "
+echo 'Instalarea a fost efectuata cu success!!! Serverul/Containerul se va reporni in cateva secunde.'
 echo ""
-echo 'Instalarea a fost efectuata cu success!!! Repornirea serverului este in progres.'
-########Load avarage din w cu print pe char row 10/11/12#####
-echo 'Load-ul actual este' && w | awk '/load average/ { printf "%s %s %s\n", $10, $11, $12 }'
 echo 'In cazul in care apar probleme dupa rularea scriptului, trimite mail la adrian.rus@mxh.ro'
 
 sleep 10
