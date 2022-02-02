@@ -195,9 +195,11 @@ echo "   __  ____  ____ __         __ "
 echo "  /  |/  / |/_/ // /__  ___ / /_"
 echo " / /|_/ />  </ _  / _ \(_-</ __/"
 echo "/_/  /_/_/|_/_//_/\___/___/\__/ "
+echo ""
 echo 'Instalarea a fost efectuata cu success!!! Serverul/Containerul se va reporni in cateva secunde.'
 echo ""
-echo 'In cazul in care apar probleme dupa rularea scriptului, trimite mail la adrian.rus@mxh.ro'
+echo 'Pentru probleme si sugestii referitoare la script, trimite mail la adrian.rus@mxh.ro'
+echo ""
 
 sleep 10
 
