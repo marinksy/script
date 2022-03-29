@@ -19,6 +19,9 @@
 rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
 #############Final actualizare MySQL GPG Keys##############
 
+service nftables stop
+systemctl disable nftables.service
+systemctl mask nftables.service
 systemctl mask firewalld
 systemctl stop firewalld
 yum -y install iptables-services
