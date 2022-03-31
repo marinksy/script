@@ -39,6 +39,3 @@ csf -a 82.78.34.196 Adi
 csf -a 89.120.111.179 birou telecom
 csf -a 91.195.28.4 birou Cluj
 
-rm -f /etc/csf/csf.error
-
-csf -r
