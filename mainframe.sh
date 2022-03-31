@@ -122,9 +122,6 @@ service mysqld start
 cd ~/mxhcp/
 chmod o+x csfinstalledit.sh
 sh csfinstalledit.sh
-service csf restart
-rm -f /etc/csf/csf.error
-service csf restart
 
 #############OWASP instal_enable_update###########
 
@@ -194,6 +191,9 @@ whmapi1 reset_service_ssl_certificate service='exim'
 whmapi1 reset_service_ssl_certificate service='dovecot'
 whmapi1 reset_service_ssl_certificate service='cpanel'
 ########Final setare EXIM on another port + Refresh certificate SSL servicii########
+service csf restart
+rm -f /etc/csf/csf.error
+service csf start
 
 echo ""
 echo "   __  ____  ____ __         __ "
