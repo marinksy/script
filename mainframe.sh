@@ -210,4 +210,4 @@ sleep 10
 cd ~
 rm -rf mxhcp/
 
-reboot
+service sshd restart
