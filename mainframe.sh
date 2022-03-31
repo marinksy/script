@@ -26,7 +26,7 @@ systemctl mask firewalld
 systemctl stop firewalld
 yum -y install iptables-services
 systemctl enable iptables
-systemctl stop iptables
+systemctl start iptables
 
 #####Actualizari/Updates####
 yum install epel-release -y
