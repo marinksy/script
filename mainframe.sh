@@ -193,6 +193,7 @@ systemctl disable nftables.service
 systemctl mask nftables.service
 service csf restart
 rm -f /etc/csf/csf.error
+service csf start
 service sshd restart
 
 echo ""
