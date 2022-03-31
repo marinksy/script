@@ -193,7 +193,6 @@ whmapi1 reset_service_ssl_certificate service='cpanel'
 ########Final setare EXIM on another port + Refresh certificate SSL servicii########
 service csf restart
 rm -f /etc/csf/csf.error
-service csf start
 
 echo ""
 echo "   __  ____  ____ __         __ "
