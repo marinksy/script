@@ -208,5 +208,4 @@ echo 'Pentru probleme si sugestii referitoare la script, trimite mail la adrian.
 echo ""
 
 cd ~
-rm -rf mxhcp/
-cd ~
+rm -rf mxhcp/ && cd ~
