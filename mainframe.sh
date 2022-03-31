@@ -122,7 +122,9 @@ service mysqld start
 cd ~/mxhcp/
 chmod o+x csfinstalledit.sh
 sh csfinstalledit.sh
-
+service csf restart
+rm -f /etc/csf/csf.error
+service csf restart
 
 #############OWASP instal_enable_update###########
 
