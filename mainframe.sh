@@ -19,9 +19,6 @@
 rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
 #############Final actualizare MySQL GPG Keys##############
 
-service nftables stop
-systemctl disable nftables.service
-systemctl mask nftables.service
 systemctl mask firewalld
 systemctl stop firewalld
 yum -y install iptables-services
@@ -191,8 +188,12 @@ whmapi1 reset_service_ssl_certificate service='exim'
 whmapi1 reset_service_ssl_certificate service='dovecot'
 whmapi1 reset_service_ssl_certificate service='cpanel'
 ########Final setare EXIM on another port + Refresh certificate SSL servicii########
+service nftables stop
+systemctl disable nftables.service
+systemctl mask nftables.service
 service csf restart
 rm -f /etc/csf/csf.error
+service sshd restart
 
 echo ""
 echo "   __  ____  ____ __         __ "
@@ -200,14 +201,10 @@ echo "  /  |/  / |/_/ // /__  ___ / /_"
 echo " / /|_/ />  </ _  / _ \(_-</ __/"
 echo "/_/  /_/_/|_/_//_/\___/___/\__/ "
 echo ""
-echo 'Instalarea a fost efectuata cu success!!! Serverul/Containerul se va reporni in cateva secunde.'
+echo 'Instalarea a fost efectuata cu success!!!'
 echo ""
 echo 'Pentru probleme si sugestii referitoare la script, trimite mail la adrian.rus@mxh.ro'
 echo ""
 
-sleep 10
-
 cd ~
 rm -rf mxhcp/
-
-service sshd restart
