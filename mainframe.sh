@@ -208,3 +208,4 @@ echo ""
 
 cd ~
 rm -rf mxhcp/
+cd ~
