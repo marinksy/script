@@ -165,7 +165,7 @@ sh imav-deploy.sh
 ########Final instalare ImunifyAV + Activare modul in cPanel#############
 
 ########Instalare Wordpress Toolkit#############
-sh <(curl https://wp-toolkit.plesk.com/cPanel/installer.sh || wget -O - https://wp-toolkit.plesk.com/cPanel/installer.sh)
+curl https://wp-toolkit.plesk.com/cPanel/installer.sh | sh
 ########Finae instalare Wordpress Toolkit#############
 
 ########Setare session save path si tmp dir in PHP-FPM#############
