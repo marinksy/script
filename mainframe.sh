@@ -164,6 +164,10 @@ sh imav-deploy.sh
 /usr/share/av-userside-plugin.sh
 ########Final instalare ImunifyAV + Activare modul in cPanel#############
 
+########Instalare Wordpress Toolkit#############
+sh <(curl https://wp-toolkit.plesk.com/cPanel/installer.sh || wget -O - https://wp-toolkit.plesk.com/cPanel/installer.sh)
+########Finae instalare Wordpress Toolkit#############
+
 ########Setare session save path si tmp dir in PHP-FPM#############
 echo "php_value_session_save_path: { name: 'php_value[session.save_path]', value: \"/var/cpanel/php/sessions/[% ea_php_version %]\" }" >> /var/cpanel/ApachePHPFPM/system_pool_defaults.yaml
 echo "php_value_upload_tmp_dir: { name: 'php_value[upload_tmp_dir]', value: \"[% homedir %]/tmp\" }" >> /var/cpanel/ApachePHPFPM/system_pool_defaults.yaml
