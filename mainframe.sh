@@ -185,6 +185,12 @@ hostname -f > /root/hostname
 rm -f /root/hostname
 ########Final fixare hostname server########
 
+##########Resetare memory_limit versiuni PHP##########
+sed -i '/memory_limit/c\memory_limit = 2048M' /opt/cpanel/ea-php74/root/etc/php.ini
+sed -i '/memory_limit/c\memory_limit = 2048M' /opt/cpanel/ea-php80/root/etc/php.ini
+sed -i '/memory_limit/c\memory_limit = 2048M' /opt/cpanel/ea-php81/root/etc/php.ini
+##########Final resetare memory_limit versiuni PHP##########
+
 ########Setare EXIM on another port + Refresh certificate SSL servicii########
 whmapi1 configureservice service=exim-altport enabled=1 monitored=1
 whmapi1 reset_service_ssl_certificate service='ftp'
