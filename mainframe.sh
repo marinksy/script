@@ -100,9 +100,9 @@ echo '{"provider":null,"_schema_version":1}' >> /var/cpanel/autossl.json
 /usr/local/bin/ea_install_profile --install /etc/cpanel/ea4/profiles/cpanel/allphp-opcache.json
 
 #####Modifica handlere############
-/usr/local/cpanel/bin/rebuild_phpconf --ea-php73=suphp
 /usr/local/cpanel/bin/rebuild_phpconf --ea-php74=suphp
 /usr/local/cpanel/bin/rebuild_phpconf --ea-php80=suphp
+/usr/local/cpanel/bin/rebuild_phpconf --ea-php81=suphp
 
 ###Modifica optiuni multiphp#######
 cd ~/mxhcp/
