@@ -213,4 +213,3 @@ echo ""
 
 cd ~
 rm -rf mxhcp/ && cd ~
-reboot
