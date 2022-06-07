@@ -32,6 +32,13 @@ sed -i '/TCP_IN = "20/c\TCP_IN = "20,21,22,25,53,80,110,143,443,465,587,993,995,
 sed -i '/TESTING = "1"/c\TESTING = "0"' /etc/csf/csf.conf
 sed -i '/RESTRICT_SYSLOG = "0"/c\RESTRICT_SYSLOG = "2"' /etc/csf/csf.conf
 
+sed -i '/# .configserver.com/c\.configserver.com' /etc/csf/csf.rignore
+sed -i '/# www.configserver.com/c\www.configserver.com' /etc/csf/csf.rignore
+sed -i '/# .configserver.co.uk/c\.configserver.co.uk' /etc/csf/csf.rignore
+sed -i '/# .crawl.yahoo.net/c\.crawl.yahoo.net' /etc/csf/csf.rignore
+sed -i '/# .search.msn.com/c\.search.msn.com' /etc/csf/csf.rignore
+sed -i '/# .googlebot.com/c\.googlebot.com' /etc/csf/csf.rignore
+
 csf -x && csf -e
 
 csf -a 5.2.174.151 Birou RDS si VPN
