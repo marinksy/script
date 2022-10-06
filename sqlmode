@@ -2,31 +2,24 @@
 # http://dev.mysql.com/doc/refman/5.7/en/server-configuration-defaults.html
 
 [mysqld]
-performance-schema=0
-#
-# Remove leading # and set to the amount of RAM for the most important data
-# cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.
-# innodb_buffer_pool_size = 128M
-#
-# Remove leading # to turn on a very important data integrity option: logging
-# changes to the binary log between backups.
-# log_bin
-#
-# Remove leading # to set options mainly useful for reporting servers.
-# The server defaults are faster for transactions and fast SELECTs.
-# Adjust sizes as needed, experiment to find the optimal values.
-# join_buffer_size = 128M
-# sort_buffer_size = 2M
-# read_rnd_buffer_size = 2M
-datadir=/var/lib/mysql
-socket=/var/lib/mysql/mysql.sock
-
-# Disabling symbolic-links is recommended to prevent assorted security risks
-symbolic-links=0
-
-log-error=/var/log/mysqld.log
-pid-file=/var/run/mysqld/mysqld.pid
-innodb_buffer_pool_size=61865984
-max_allowed_packet=268435456
-open_files_limit=40000
-innodb_file_per_table=1
+log-error = /var/lib/mysql/mysqld.err
+performance-schema = 0
+innodb_file_per_table = 1
+unix_socket = OFF
+max_allowed_packet = 268435456
+open_files_limit=66000
+symbolic-links = 0
+sql_mode = "NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"
+innodb_buffer_pool_size = 134217728
+innodb_use_native_aio = 0
+innodb_read_io_threads = 64
+innodb_write_io_threads = 64
+key_buffer_size = 32M
+thread_cache_size = 200
+table_definition_cache = 40000
+table_open_cache = 40000
+max_heap_table_size = 128M
+tmp_table_size = 128M
+thread_stack = 192K
+max_connections = 4000
+ft_min_word_len = 3
