@@ -1,5 +1,5 @@
-# For advice on how to change settings please see
-# http://dev.mysql.com/doc/refman/5.7/en/server-configuration-defaults.html
+# Config MariaDB
+
 
 [mysqld]
 log-error = /var/lib/mysql/mysqld.err
