@@ -200,14 +200,6 @@ rm -f /etc/csf/csf.error
 service csf start
 service sshd restart
 
-#######Trecere la MariaDB 10.5#####
-yum remove -y mysql-community-*
-rm -rf /var/lib/mysql
-sed -i 's/mysql-version=8.0/mysql-version=10.5/g' /var/cpanel/cpanel.config
-whmapi1 start_background_mysql_upgrade version=10.5
-service mysqld restart
-######Final trecere la MariaDB 10.5#####
-
 echo ""
 echo "   __  ____  ____ __         __ "
 echo "  /  |/  / |/_/ // /__  ___ / /_"
