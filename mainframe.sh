@@ -32,6 +32,12 @@ yum -y update
 
 sed -i '/SELINUX=permissive/c\SELINUX=disabled' /etc/selinux/config
 
+#####Selectare MariaDB 10.5####
+mkdir /root/cpanel_profile
+touch /root/cpanel_profile/cpanel.config
+echo "mysql-version=10.5" > /root/cpanel_profile/cpanel.config
+#####Final selectare MariaDB 10.5####
+
 cd /home
 wget -N http://layer1.cpanel.net/latest
 chmod 0755 latest
