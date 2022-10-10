@@ -43,6 +43,7 @@ csf -x && csf -e
 
 csf -a 5.2.174.151 Birou RDS si VPN
 csf -a 82.78.34.196 Adi
-csf -a 89.120.111.179 birou telecom
-csf -a 91.195.28.4 birou Cluj
+csf -a 89.120.111.179 Birou Bistrita Telekom
+csf -a 91.195.28.4 Birou Cluj
+csf -a 89.36.130.98 Birou Bucuresti
 
