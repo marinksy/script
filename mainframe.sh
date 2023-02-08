@@ -37,9 +37,9 @@ touch /etc/cpupdate.conf
 echo "CPANEL=stable" > /etc/cpupdate.conf
 #####Final selectare Stable tier####
 #####Selectare MariaDB 10.6####
-mkdir /root/cpanel_profile
-touch /root/cpanel_profile/cpanel.config
-echo "mysql-version=10.6" > /root/cpanel_profile/cpanel.config
+#mkdir /root/cpanel_profile
+#touch /root/cpanel_profile/cpanel.config
+#echo "mysql-version=10.6" > /root/cpanel_profile/cpanel.config
 #####Final selectare MariaDB 10.6####
 
 cd /home
