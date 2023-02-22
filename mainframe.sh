@@ -34,7 +34,7 @@ sed -i '/SELINUX=permissive/c\SELINUX=disabled' /etc/selinux/config
 
 #####Selectare Stable tier####
 touch /etc/cpupdate.conf
-echo "CPANEL=stable" > /etc/cpupdate.conf
+echo "CPANEL=release" > /etc/cpupdate.conf
 #####Final selectare Stable tier####
 #####Selectare MariaDB 10.6####
 #mkdir /root/cpanel_profile
