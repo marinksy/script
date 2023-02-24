@@ -122,8 +122,9 @@ sh multiphp.sh
 ######SQLMODE#######
 cd ~/mxhcp/
 service mysqld stop
+cat /dev/null > /etc/my.cnf
 cat ~/mxhcp/sqlmode >> /etc/my.cnf
-service mysqld start
+/scripts/restartsrv_mysql
 
 ########Instalare CSF, adaugare IP-uri si modificare conf##########
 cd ~/mxhcp/
