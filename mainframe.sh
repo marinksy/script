@@ -16,7 +16,7 @@
 #############Final verificare RAM##############
 echo "nameserver 8.8.8.8" >> /etc/resolv.conf && echo "nameserver 8.8.4.4" >> /etc/resolv.conf
 #############Actualizare MySQL GPG Keys##############
-rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
+#rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
 #############Final actualizare MySQL GPG Keys##############
 
 systemctl mask firewalld
