@@ -16,7 +16,7 @@
 #############Final verificare RAM##############
 echo "nameserver 8.8.8.8" >> /etc/resolv.conf && echo "nameserver 8.8.4.4" >> /etc/resolv.conf
 #############Actualizare MySQL GPG Keys##############
-rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
+#rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
 #############Final actualizare MySQL GPG Keys##############
 
 systemctl mask firewalld
@@ -37,9 +37,9 @@ touch /etc/cpupdate.conf
 echo "CPANEL=release" > /etc/cpupdate.conf
 #####Final selectare Stable tier####
 #####Selectare MariaDB 10.6####
-#mkdir /root/cpanel_profile
-#touch /root/cpanel_profile/cpanel.config
-#echo "mysql-version=10.6" > /root/cpanel_profile/cpanel.config
+mkdir /root/cpanel_profile
+touch /root/cpanel_profile/cpanel.config
+echo "mysql-version=10.6" > /root/cpanel_profile/cpanel.config
 #####Final selectare MariaDB 10.6####
 
 cd /home
