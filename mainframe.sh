@@ -178,9 +178,6 @@ echo "php_value_upload_tmp_dir: { name: 'php_value[upload_tmp_dir]', value: \"[%
 /scripts/restartsrv_httpd
 ########Final setare session save path si tmp dir in PHP-FPM#############
 
-#######De la Demian######
-sed -i 's/resetpass=0/resetpass=1/; s/resetpass_sub=0/resetpass_sub=1/; s/tweak_unset_vars=allow_insecure_contactemail_update,display_upgrade_opportunities,enable_api_log,force_short_prefix/tweak_unset_vars=/' /var/cpanel/cpanel.config
-#######Final de la Demian####
 
 ########Acceptare EULA########
 whmapi1 accept_eula
