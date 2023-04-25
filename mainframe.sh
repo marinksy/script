@@ -1,4 +1,6 @@
 #!/bin/bash
+#####Preluare hostname pt setare ulterioara
+echo $HOSTNAME > /root/hostname.txt
 
 ########Verificare RAM,	sunt necesari minim	2GB RAM##########
 #awk '/Mem:/ {print $2}' < (free -m) > freem
@@ -209,6 +211,9 @@ service csf restart
 rm -f /etc/csf/csf.error
 service csf start
 service sshd restart
+
+#####Setare hostname
+/usr/local/cpanel/bin/set_hostname $(cat /root/hostname.txt)
 
 echo ""
 echo "               __                ______      ____        "
