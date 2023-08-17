@@ -45,7 +45,7 @@ echo "mysql-version=10.6" > /root/cpanel_profile/cpanel.config
 #####Final selectare MariaDB 10.6####
 
 cd /home
-wget -N http://layer1.cpanel.net/latest
+wget -N https://securedownloads.cpanel.net/latest
 chmod 0755 latest
 ./latest
 
