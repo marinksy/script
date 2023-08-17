@@ -187,7 +187,7 @@ whmapi1 set_tweaksetting key=resetpass value=0 && whmapi1 set_tweaksetting key=r
 #####Final Demian######
 
 ########Acceptare EULA########
-whmapi1 accept_eula
+#whmapi1 accept_eula
 ########Final acceptare EULA########
 
 ########Fixare hostname server########
