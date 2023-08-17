@@ -1,6 +1,6 @@
 #!/bin/bash
 #####Preluare hostname pt setare ulterioara
-echo $HOSTNAME > /root/hostname.txt
+#echo $HOSTNAME > /root/hostname.txt
 
 ########Verificare RAM,	sunt necesari minim	2GB RAM##########
 #awk '/Mem:/ {print $2}' < (free -m) > freem
@@ -191,9 +191,9 @@ whmapi1 accept_eula
 ########Final acceptare EULA########
 
 ########Fixare hostname server########
-hostname -f > /root/hostname
-/usr/local/cpanel/bin/set_hostname $(cat /root/hostname)
-rm -f /root/hostname
+#hostname -f > /root/hostname
+#/usr/local/cpanel/bin/set_hostname $(cat /root/hostname)
+#rm -f /root/hostname
 ########Final fixare hostname server########
 
 ########Setare EXIM on another port + Refresh certificate SSL servicii########
@@ -213,7 +213,7 @@ service csf start
 service sshd restart
 
 #####Setare hostname
-/usr/local/cpanel/bin/set_hostname $(cat /root/hostname.txt)
+#/usr/local/cpanel/bin/set_hostname $(cat /root/hostname.txt)
 
 echo ""
 echo "               __                ______      ____        "
