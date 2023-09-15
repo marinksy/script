@@ -213,7 +213,7 @@ service csf start
 service sshd restart
 
 #####Setare hostname
-#/usr/local/cpanel/bin/set_hostname $(cat /root/hostname.txt)
+/usr/local/cpanel/bin/set_hostname $(cat /root/hostname.txt)
 
 echo ""
 echo "               __                ______      ____        "
