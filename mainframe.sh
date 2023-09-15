@@ -1,6 +1,6 @@
 #!/bin/bash
 #####Preluare hostname pt setare ulterioara
-#echo $HOSTNAME > /root/hostname.txt
+echo $HOSTNAME > /root/hostname.txt
 
 ########Verificare RAM,	sunt necesari minim	2GB RAM##########
 #awk '/Mem:/ {print $2}' < (free -m) > freem
