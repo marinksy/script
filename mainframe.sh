@@ -187,13 +187,13 @@ whmapi1 set_tweaksetting key=resetpass value=0 && whmapi1 set_tweaksetting key=r
 #####Final Demian######
 
 ########Acceptare EULA########
-#whmapi1 accept_eula
+whmapi1 accept_eula
 ########Final acceptare EULA########
 
 ########Fixare hostname server########
-#hostname -f > /root/hostname
-#/usr/local/cpanel/bin/set_hostname $(cat /root/hostname)
-#rm -f /root/hostname
+hostname -f > /root/hostname
+/usr/local/cpanel/bin/set_hostname $(cat /root/hostname)
+rm -f /root/hostname
 ########Final fixare hostname server########
 
 ########Setare EXIM on another port + Refresh certificate SSL servicii########
