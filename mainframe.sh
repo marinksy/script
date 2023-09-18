@@ -159,7 +159,7 @@ crontab -l | { cat; echo "15 3 * * 0 rm -rf /var/log/*.gz"; } | crontab -
 crontab -l | { cat; echo "30 3 * * 0 rm -rf /var/log/*-20*"; } | crontab -
 crontab -l | { cat; echo "20 3 * * 0 rm -rf /tmp/*"; } | crontab -
 
-touch /etc/.whostmgrft
+#touch /etc/.whostmgrft
 
 sed -i '/allow_url_fopen = /c\allow_url_fopen = On' /opt/cpanel/ea-php*/root/etc/php.ini
 sed -i '/allow_url_include = /c\allow_url_fopen = On' /opt/cpanel/ea-php*/root/etc/php.ini
