@@ -31,8 +31,12 @@ csf -r
 sed -i '/TCP_IN = "20/c\TCP_IN = "20,21,22,25,53,80,110,143,443,465,587,993,995,2077,2078,2079,2080,2082,2083,2086,2087,2095,2096,8443,26,49152:65534,7080,2112"' /etc/csf/csf.conf
 sed -i '/TESTING = "1"/c\TESTING = "0"' /etc/csf/csf.conf
 sed -i '/RESTRICT_SYSLOG = "0"/c\RESTRICT_SYSLOG = "2"' /etc/csf/csf.conf
-sed -i '/PT_USERPROC = "10"/c\PT_USERPROC = "100"' /etc/csf/csf.conf
-sed -i '/PT_USERMEM = "512"/c\PT_USERMEM = "1024"' /etc/csf/csf.conf
+sed -i '/PT_USERPROC = "10"/c\PT_USERPROC = "0"' /etc/csf/csf.conf
+sed -i '/PT_USERMEM = "512"/c\PT_USERMEM = "0"' /etc/csf/csf.conf
+sed -i '/PT_USERRSS = "256"/c\PT_USERRSS = "0"' /etc/csf/csf.conf
+sed -i '/PT_USERTIME = "1800"/c\PT_USERTIME = "0"' /etc/csf/csf.conf
+sed -i '/PT_USERKILL_ALERT = "1"/c\PT_USERKILL_ALERT = "0"' /etc/csf/csf.conf
+echo "85" >> /etc/csf/csf.uidignore
 
 sed -i '/# .configserver.com/c\.configserver.com' /etc/csf/csf.rignore
 sed -i '/# www.configserver.com/c\www.configserver.com' /etc/csf/csf.rignore
