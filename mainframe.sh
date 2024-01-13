@@ -231,5 +231,23 @@ echo ""
 echo 'Instalarea a fost efectuata cu success!!!'
 echo ""
 
+# Adaugare popup pentru instalarea LiteSpeed
+read -p "Vrei să instalezi și LiteSpeed? (y/n): " install_litespeed
+
+if [ "$install_litespeed" == "y" ] || [ "$install_litespeed" == "Y" ]; then
+    cd ~/mxhcp/
+    chmod o+x litespeed.sh
+    sh litespeed.sh
+    
+    # Afisare mesaj de instalare reusita pentru LiteSpeed
+    echo 'Instalarea LiteSpeed a fost efectuată cu succes, iar serverul este configurat integral!!!'
+    echo ""
+else
+    # Continuare fara instalarea LiteSpeed
+    echo "Instalarea LiteSpeed a fost omisă. Serverul este configurat integral"
+    echo ""
+fi
+
+
 cd ~
 rm -rf mxhcp/ && cd ~
