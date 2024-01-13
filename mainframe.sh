@@ -111,6 +111,11 @@ echo '{"provider":null,"_schema_version":1}' >> /var/cpanel/autossl.json
 #####Instalare apache4 all si opcache#####
 /usr/local/bin/ea_install_profile --install /etc/cpanel/ea4/profiles/cpanel/allphp-opcache.json
 
+####Instalare toate versiunile php ########
+cd ~/mxhcp/
+chmod o+x versiuniphp.sh
+sh versiuniphp.sh
+
 #####Modifica handlere############
 /usr/local/cpanel/bin/rebuild_phpconf --ea-php80=suphp
 /usr/local/cpanel/bin/rebuild_phpconf --ea-php81=suphp
@@ -150,7 +155,7 @@ mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys && chmod -R go= ~/.ssh && echo "
 ########Setare logrotate pentru logurile care permit#############
 cat ~/mxhcp/logrotateconf >> /etc/logrotate.conf
 #####Editare crontaburi pentru sters loguri necuprinse in logrotate############
-  
+
 crontab -l | { cat; echo "0 1 * * * find /home . -name 'error_log' -exec rm {} \; > /dev/null 2>&1"; } | crontab -
 crontab -l | { cat; echo "45 3 * * * > /var/log/stderr.log"; } | crontab -
 crontab -l | { cat; echo "0 3 * * 0 rm -rf /usr/local/apache/logs/archive/*"; } | crontab -
@@ -224,8 +229,6 @@ echo " \___/\__, /_.___/\___/_/____/_/    \____/_/_/|_/____/   "
 echo "     /____/            /_____/                           "
 echo ""
 echo 'Instalarea a fost efectuata cu success!!!'
-echo ""
-echo 'Pentru probleme si sugestii referitoare la script, trimite mail la adrian.rus@mxh.ro'
 echo ""
 
 cd ~
