@@ -58,12 +58,12 @@ sed -i '/#Port/c\Port 2112' /etc/ssh/sshd_config
 rm -f /var/cpanel/hulkd/enabled
 
 ######Setari eximconf##########
-cd ~/mxhcp/
+cd ~/script/
 chmod o+x eximconf.sh
 sh eximconfm.sh
 
 ######Setari eximconf##########
-cd ~/mxhcp/
+cd ~/script/
 chmod o+x tweakset.sh
 sh tweakset.sh
 
@@ -101,7 +101,7 @@ yes | /scripts/setupnameserver bind
 timedatectl set-timezone "Europe/Bucharest"
 
 ######Setari awstats##########
-cd ~/mxhcp/
+cd ~/script/
 chmod o+x awstats.sh
 sh awstats.sh
 
@@ -112,7 +112,7 @@ echo '{"provider":null,"_schema_version":1}' >> /var/cpanel/autossl.json
 /usr/local/bin/ea_install_profile --install /etc/cpanel/ea4/profiles/cpanel/allphp-opcache.json
 
 ####Instalare toate versiunile php ########
-cd ~/mxhcp/
+cd ~/script/
 chmod o+x versiuniphp.sh
 sh versiuniphp.sh
 
@@ -122,19 +122,19 @@ sh versiuniphp.sh
 /usr/local/cpanel/bin/rebuild_phpconf --ea-php82=suphp
 
 ###Modifica optiuni multiphp#######
-cd ~/mxhcp/
+cd ~/script/
 chmod o+x multiphp.sh
 sh multiphp.sh
 
 ######SQLMODE#######
-cd ~/mxhcp/
+cd ~/script/
 service mysqld stop
 cat /dev/null > /etc/my.cnf
-cat ~/mxhcp/sqlmode >> /etc/my.cnf
+cat ~/script/sqlmode >> /etc/my.cnf
 /scripts/restartsrv_mysql
 
 ########Instalare CSF, adaugare IP-uri si modificare conf##########
-cd ~/mxhcp/
+cd ~/script/
 chmod o+x csfinstalledit.sh
 sh csfinstalledit.sh
 
@@ -153,7 +153,7 @@ echo 'webalizer=0' >> /var/cpanel/features/default
 mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys && chmod -R go= ~/.ssh && echo "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAABAEA0161H3xccH7lEwmYcvDpfuj1txMmOLEvsbFFb+Sus/BAkIAdzf/42rObfmg+9ddqpfuFm0NC5mKflFJq8Um5miKol8jl7C30FLkusWs7nNK2eF0p8tmpKPwwP5hjwgr5btGEJOCUzBGOYpgvbzxg3yniqUABf+ylrIXzw4mhFducoAS8Yh3+NSEiduqShgt9IIQiIyjq+moxitOyOtVjdPYnXudyinZVofaIU3dsh4gDjTfUPHXWk4hE0MjIP0eefD/Ugvm3B8JBbGukx4ggUQAntHA2M92Ye+zr5oXQkEY2U177FnMNoPjBQAOpp9L6Se/vHUjZ1Q6Y6jNVetWhh9oyXm+G8x2TELdTC6kUQCrizd1zifHpPeAmIDqfL2MEfR3W9xTUDW0nDNmdo5uPIxw56cGfFBuGjRskLGsSxh63raeeTWJ0SxI2rX+DpnLBki53HgbbEdKQZtLn3PBrQauvHp1r89nu16kOUbDYbmNO+HQPMipnrvKbTrY3m64npGBXo70668UAOfU9O/PKmEPUI/gPCSsuhpN90RSsbYSegLUXbYCPi8vVllUIczoICKInP7770jUie7ykRN3ZXjlYXhZQ7YhuzYLj1ItNLywoflN+zXDKKlpK6zdFDFTTHz0vrespU6Coe3wiIV0u0rdZvxrTX4ceAusgp+4MurswQNe0yCySc/GQrNfYyVSuuXHvFbl2o7LmXYwCPAyxo3TJdmTeiNMUL9FbPisxaqNA2KqjX8rIQGmhOT6GmT3XRiEkSH2ELM1fPtqsDss9DITrMU+E8ldHIOalyT0D15Q5uxXQ4Dk+oOXIZ60Q3OW8QDJo5uZdjyQoppA0udsxBgRANb4uWsJOPMS7psqFXO+TUQgkhfx27AGiTA+Xo8cAg0L4rzJxpfCyZUB/2xZp6CPB9RDRlGTMxTdjOj3Li9drBK4elE6gKL4FtPQYfr3ywYoTUxGwAkBPQ1H8dAmSSAxfNZw3UqEwZkHFi3PMVn/yGUOI1vw7L9AUWQdp+wkZp3vSgxWH4EEyUTs3K6PDon8i5H2tot36HvP89rZgtIXMlO37yDRbg5CWYUwmUJfx6CaX1b5AqCtDBQgT8q1CvLZKmpT9X+2GrgE5DACXXPyPORxA9QyqzXWcxAKakdMrU2Ujn1Onbxsbb1NqqV6nHBY+57U4V5KBc4uV7fB54XQNJ41VWViGrygr4qoqmXI35etqEj6tPd1mOWVH13qZkSNm9KrNDkckxVaRYl9vNRUKFPEqgkk5qhoBFaiOmfS4Dax1V/1CHwVtPO1HLKBuCxWCVY9mZDiW64bmTiNN+Krow2VhfKamJzA1ORlDXXrrdnDekedU/9e20LF2ZpKhBQ== AnsVPS" >> ~/.ssh/authorized_keys
 
 ########Setare logrotate pentru logurile care permit#############
-cat ~/mxhcp/logrotateconf >> /etc/logrotate.conf
+cat ~/script/logrotateconf >> /etc/logrotate.conf
 #####Editare crontaburi pentru sters loguri necuprinse in logrotate############
 
 crontab -l | { cat; echo "0 1 * * * find /home . -name 'error_log' -exec rm {} \; > /dev/null 2>&1"; } | crontab -
@@ -235,10 +235,10 @@ echo ""
 read -p "Vrei să instalezi și LiteSpeed? (y/n): " install_litespeed
 
 if [ "$install_litespeed" == "y" ] || [ "$install_litespeed" == "Y" ]; then
-    cd ~/mxhcp/
+    cd ~/script/
     chmod o+x litespeed.sh
     sh litespeed.sh
-    
+
     # Afisare mesaj de instalare reusita pentru LiteSpeed
     echo 'Instalarea LiteSpeed a fost efectuată cu succes, iar serverul este configurat integral!!!'
     echo ""
@@ -250,4 +250,4 @@ fi
 
 
 cd ~
-rm -rf mxhcp/ && cd ~
+rm -rf script/ && cd ~
